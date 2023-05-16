@@ -8,6 +8,7 @@ group = 'jpabook'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
 
+// lombok 때문에 생긴 것
 configurations {
 	compileOnly {
 		extendsFrom annotationProcessor
@@ -18,11 +19,15 @@ repositories {
 	mavenCentral()
 }
 
+// 의존관계
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'io.micrometer:micrometer-tracing-bridge-brave'
+	implementation 'org.springframework.boot:spring-boot-devtools'
+
 	// https://mvnrepository.com/artifact/com.h2database/h2
 //	implementation group: 'com.h2database', name: 'h2', version: '2.1.214'
 	compileOnly 'org.projectlombok:lombok'
